@@ -1,2 +1,5 @@
-# Docker-Images-Ospsuite-R
-Temporary solution - images are created manually. Later docker images should be created automatically as part of CI
+# Docker-Images
+Image includes installations of:
+* [TLF Library](https://github.com/Open-Systems-Pharmacology/TLF-Library)
+* [OSPSuite-R](https://docs.open-systems-pharmacology.org/working-with-r/r-introduction)
+
