@@ -25,6 +25,6 @@ RUN /tmp_setup/install_packages_r${r_version}_${os_version}.sh ${rclr_version} $
 RUN rm -rf /tmp_setup
 
 # run package tests
-RUN R --no-save -e "setwd(system.file('tests', package = 'rclr')); source('testthat.R')"
+RUN R --no-save -e "setwd(system.file('tests', package = 'rClr')); source('testthat.R')"
 RUN R --no-save -e "setwd(system.file('tests', package = 'tlf')); source('testthat.R')"
 RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite')); source('testthat.R')"
