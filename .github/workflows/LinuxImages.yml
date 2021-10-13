@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     strategy:
+        fail-fast: false
         matrix:
             r_version: [3.6.3, 4.1.0]
             os_version: [centos7, bionic]
@@ -14,7 +15,7 @@ jobs:
     env:
         RCLR_VERSION: 0.9.1
         TLF_VERSION: 1.2.5
-        OSPSUITE_R_VERSION: 10.0.25
+        OSPSUITE_R_VERSION: 10.0.70
     steps:
       - name: Checkout
         uses: actions/checkout@v2

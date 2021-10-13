@@ -27,4 +27,5 @@ RUN rm -rf /tmp_setup
 # run package tests
 #RUN R --no-save -e "setwd(system.file('tests', package = 'rClr')); source('testthat.R')"
 RUN R --no-save -e "setwd(system.file('tests', package = 'tlf')); source('testthat.R')"
-RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite')); source('testthat.R')"
+#RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite')); source('testthat.R')"
+RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite')); unlink('testthat/test-utilities-data-set.R'); source('testthat.R')"
