@@ -15,7 +15,7 @@ jobs:
     env:
         RCLR_VERSION: 0.9.1
         TLF_VERSION: 1.2.5
-        OSPSUITE_R_VERSION: 10.0.70
+        OSPSUITE_R_VERSION: 10.0.72
     steps:
       - name: Checkout
         uses: actions/checkout@v2
