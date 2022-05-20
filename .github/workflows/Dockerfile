@@ -9,6 +9,7 @@ ARG os_version
 ARG tlf_version
 ARG ospsuite_r_version
 ARG rclr_version
+ARG ospsuiteutils_version
 
 ENTRYPOINT ["sh"]
 
@@ -18,8 +19,11 @@ COPY .github/workflows/*.R /tmp_setup/
 COPY .github/workflows/*.sh /tmp_setup/
 RUN chmod ugo+x /tmp_setup/*.sh
 
+# Install CRAN packages
+RUN R --no-save -e "source('/tmp_setup/install_packages.R')"
+
 # Install OSP R packages
-RUN /tmp_setup/install_packages_r${r_version}_${os_version}.sh ${rclr_version} ${tlf_version} ${ospsuite_r_version} 
+RUN /tmp_setup/install_packages_r${r_version}_${os_version}.sh ${rclr_version} ${tlf_version} ${ospsuite_r_version} ${ospsuiteutils_version} 
 
 # Cleanup
 RUN rm -rf /tmp_setup
