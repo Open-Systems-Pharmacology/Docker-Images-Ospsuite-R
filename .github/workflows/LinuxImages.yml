@@ -13,8 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
         RCLR_VERSION: 0.9.1
-        TLF_VERSION: 1.2.5
-        OSPSUITE_R_VERSION: 10.0.25
+        TLF_VERSION: 1.3.66
+        OSPSUITE_R_VERSION: 11.0.123
+        OSPSUITE_UTILS_VERSION: 1.3.17
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -35,6 +36,7 @@ jobs:
             ospsuite_r_version=${{ env.OSPSUITE_R_VERSION }}
             tlf_version=${{ env.TLF_VERSION }}
             rclr_version=${{ env.RCLR_VERSION }}
+            ospsuiteutils_version=${{ env.OSPSUITE_UTILS_VERSION }}
           push: ${{ github.event_name == 'release' }}
           tags: |
             ghcr.io/open-systems-pharmacology/ospsuite-r${{ matrix.r_version }}-${{ matrix.os_version }}:latest
